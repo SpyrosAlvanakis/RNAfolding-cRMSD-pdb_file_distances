@@ -13,7 +13,7 @@ The repository is structured as follows:
 │   └── main_1.py        # Script for part rna folding
 │
 ├── crmsd_drmsd/
-│   ├── data/            # Input data for Part 2 ("10 conformations.txt")
+│   ├── data/            # Input data 
 │   ├── utils/           # Functions of c-RMSD and d-RMSD calculations
 │   ├── results/         # Relevant visualizations
 │   └── main_2.py        # Script for part of c-RMSD and d-RMSD
