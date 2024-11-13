@@ -5,8 +5,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
+# Get the current working directory
+current_path = os.path.dirname(os.path.abspath(__file__))  # Get the current working directory
+results_path = os.path.join(current_path, "results") # Add the results folder
+
 # Read conformations
-conformations = utils.read_conformations('excercise_2/data/10_conformations.txt')
+conformations = utils.read_conformations(f'{current_path}/data/10_conformations.txt')
 
 # Calculate c-RMSD
 start_time = time.time()
@@ -30,10 +34,6 @@ cRMSD_time= end_time - start_time
 print(f'c-RMSD calculation time: {cRMSD_time}')
 
 cRMSD_df = utils.df_format(cRMSD_mtrx,conformations.mol.unique())
-
-# Ensure the results directory exists
-current_path = os.path.dirname(os.path.abspath(__file__))  # Get the current working directory
-results_path = os.path.join(current_path, "results") # Add the results folder
 
 # Plot the heatmap
 plt.figure(figsize=(10, 6))
